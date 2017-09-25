@@ -16,68 +16,68 @@ class BufferStreamReader : public StreamReader {
 
 private:
 
-	// TODO: Add description
-	const BufferReader&	reader_;
+    // TODO: Add description
+    const BufferReader&    reader_;
 
-	// TODO: Add description
-	BC pos_;
+    // TODO: Add description
+    BC pos_;
 
 
 protected:
 
-	/* --- from StreamReader class: ---------------------------------------- */
+    /* --- from StreamReader class: ---------------------------------------- */
 
-	// TODO: Add description
-	virtual uint8_t readByte_(bool remove = true);
+    // TODO: Add description
+    virtual uint8_t readByte_(bool remove = true);
 
-	// TODO: Add description
-	virtual bool readBit_(bool remove = true);
+    // TODO: Add description
+    virtual bool readBit_(bool remove = true);
 
-	/* --- from StreamReader -> BufferReader class: ------------------------ */
+    /* --- from StreamReader -> BufferReader class: ------------------------ */
 
-	// TODO: Add description
-	virtual bool getBit_(const BC& bc) const;
+    // TODO: Add description
+    virtual bool getBit_(const BC& bc) const;
 
-	// TODO: Add description
-	virtual uint8_t getByte_(const BC& bc) const;
+    // TODO: Add description
+    virtual uint8_t getByte_(const BC& bc) const;
 
-	// TODO: Add description
-	virtual BC copyTo_(BufferWriter& buffer) const;
+    // TODO: Add description
+    virtual BC copyTo_(BufferWriter& buffer) const;
 
-	// TODO: Add description
-	virtual BC getLength_() const;
+    // TODO: Add description
+    virtual BC getLength_() const;
 
-	/* --------------------------------------------------------------------- */
+    /* --------------------------------------------------------------------- */
 
 
 public:
 
-	// TODO: Add description
-	BufferStreamReader(const BufferReader& reader);
+    // TODO: Add description
+    BufferStreamReader(const BufferReader& reader);
 
 
-	// TODO: Add description
-	inline void reset() {
+    // TODO: Add description
+    inline void reset() {
 
-		pos_ = 0;
-	}
+        pos_ = 0;
+    }
 
-	// TODO: Add description
-	inline void setPosition(const BC& pos) {
+    // TODO: Add description
+    inline void setPosition(const BC& pos) {
 
-		/* don't change 'pos_' if 'pos' is undefined */
-		pos_ = pos.isDef() ? pos : pos_;
-	}
+        /* don't change 'pos_' if 'pos' is undefined */
+        pos_ = pos.isDef() ? pos : pos_;
+    }
 
-	// TODO: Add description
-	inline BC getPosition() const {
+    // TODO: Add description
+    inline BC getPosition() const {
 
-		return pos_;
-	}
+        return pos_;
+    }
 
 
-	// TODO: Add description
-	virtual ~BufferStreamReader();
+    // TODO: Add description
+    virtual ~BufferStreamReader();
 
 };
 

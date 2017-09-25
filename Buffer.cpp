@@ -27,18 +27,18 @@ Buffer::Buffer(const BC& capacity) : capacity_(capacity) {
  */
 BC Buffer::getRemainingCapacity() const {
 
-	BC remCap = capacity_;
+    BC remCap = capacity_;
 
-	if (remCap.isDef()) {
-		BC len = this->getLength();
-		if (remCap >= len) {
-			remCap -= len;
-		} else {
-			remCap = 0;
-		}
-	}
+    if (remCap.isDef()) {
+        BC len = this->getLength();
+        if (remCap >= len) {
+            remCap -= len;
+        } else {
+            remCap = 0;
+        }
+    }
 
-	return remCap;
+    return remCap;
 }
 
 

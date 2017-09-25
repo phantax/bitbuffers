@@ -17,27 +17,27 @@ class BufferModifier {
 
 public:
 
-	// TODO: Add description
-	BufferModifier();
+    // TODO: Add description
+    BufferModifier();
 
-	/* --------------------------------------------------------------------- */
+    /* --------------------------------------------------------------------- */
 
-	// TODO: Add description
-	virtual bool setBit(const BC& bc, bool bit) = 0;
+    // TODO: Add description
+    virtual bool setBit(const BC& bc, bool bit) = 0;
 
-	// TODO: Add description
-	virtual bool setByte(const BC& bc, uint8_t byte) = 0;
+    // TODO: Add description
+    virtual bool setByte(const BC& bc, uint8_t byte) = 0;
 
-	// TODO: Add description
-	virtual void clear() = 0;
+    // TODO: Add description
+    virtual void clear() = 0;
 
-	// TODO: Add description
-	virtual void truncate(const BC& length) = 0;
+    // TODO: Add description
+    virtual void truncate(const BC& length) = 0;
 
-	/* --------------------------------------------------------------------- */
+    /* --------------------------------------------------------------------- */
 
-	// TODO: Add description
-	virtual ~BufferModifier();
+    // TODO: Add description
+    virtual ~BufferModifier();
 
 };
 

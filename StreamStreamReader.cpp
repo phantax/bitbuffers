@@ -8,7 +8,7 @@ using std::vector;
  * ___________________________________________________________________________
  */
 StreamStreamReader::StreamStreamReader(StreamReader& reader)
-		: len_(-1), reader_(reader) {
+        : len_(-1), reader_(reader) {
 }
 
 
@@ -16,7 +16,7 @@ StreamStreamReader::StreamStreamReader(StreamReader& reader)
  * ___________________________________________________________________________
  */
 StreamStreamReader::StreamStreamReader(StreamReader& reader, const BC& len)
-		: len_(len), reader_(reader) {
+        : len_(len), reader_(reader) {
 }
 
 
@@ -25,12 +25,12 @@ StreamStreamReader::StreamStreamReader(StreamReader& reader, const BC& len)
  */
 bool StreamStreamReader::getBit_(const BC& bc) const {
 
-	if (len_.isUndef() || bc < len_) {
-		return reader_.getBit(bc);
-	} else {
-		throw std::runtime_error(
-				"StreamStreamReader::getBit(...): Out of range");
-	}
+    if (len_.isUndef() || bc < len_) {
+        return reader_.getBit(bc);
+    } else {
+        throw std::runtime_error(
+                "StreamStreamReader::getBit(...): Out of range");
+    }
 }
 
 
@@ -39,12 +39,12 @@ bool StreamStreamReader::getBit_(const BC& bc) const {
  */
 uint8_t StreamStreamReader::getByte_(const BC& bc) const {
 
-	if (len_.isUndef() || (bc + 1) <= len_) {
-		return reader_.getByte(bc);
-	} else {
-		throw std::runtime_error(
-				"StreamStreamReader::getByte(...): Out of range");
-	}
+    if (len_.isUndef() || (bc + 1) <= len_) {
+        return reader_.getByte(bc);
+    } else {
+        throw std::runtime_error(
+                "StreamStreamReader::getByte(...): Out of range");
+    }
 }
 
 
@@ -53,7 +53,7 @@ uint8_t StreamStreamReader::getByte_(const BC& bc) const {
  */
 BC StreamStreamReader::copyTo_(BufferWriter& buffer) const {
 
-	return BC::undef();
+    return BC::undef();
 }
 
 
@@ -62,11 +62,11 @@ BC StreamStreamReader::copyTo_(BufferWriter& buffer) const {
  */
 BC StreamStreamReader::getLength_() const {
 
-	BC len = reader_.getLength();
-	if (len_.isDef() && len_ < len) {
-		len = len_;
-	}
-	return len;
+    BC len = reader_.getLength();
+    if (len_.isDef() && len_ < len) {
+        len = len_;
+    }
+    return len;
 }
 
 
@@ -75,16 +75,16 @@ BC StreamStreamReader::getLength_() const {
  */
 uint8_t StreamStreamReader::readByte_(bool remove) {
 
-	if (len_.isUndef() || len_ >= 1) {
-		uint8_t byte = reader_.readByte(remove);
-		if (remove) {
-			len_--;
-		}
-		return byte;
-	} else {
-		throw std::runtime_error(
-				"StreamStreamReader::readByte(...): Out of range");
-	}
+    if (len_.isUndef() || len_ >= 1) {
+        uint8_t byte = reader_.readByte(remove);
+        if (remove) {
+            len_--;
+        }
+        return byte;
+    } else {
+        throw std::runtime_error(
+                "StreamStreamReader::readByte(...): Out of range");
+    }
 }
 
 
@@ -93,16 +93,16 @@ uint8_t StreamStreamReader::readByte_(bool remove) {
  */
 bool StreamStreamReader::readBit_(bool remove) {
 
-	if (len_.isUndef() || len_ > 0) {
-		bool bit = reader_.readBit(remove);
-		if (remove) {
-			len_ >>= 1;
-		}
-		return bit;
-	} else {
-		throw std::runtime_error(
-				"StreamStreamReader::readBit(...): Out of range");
-	}
+    if (len_.isUndef() || len_ > 0) {
+        bool bit = reader_.readBit(remove);
+        if (remove) {
+            len_ >>= 1;
+        }
+        return bit;
+    } else {
+        throw std::runtime_error(
+                "StreamStreamReader::readBit(...): Out of range");
+    }
 }
 
 

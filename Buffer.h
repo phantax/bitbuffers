@@ -11,31 +11,31 @@ class Buffer : public BufferReader, public BufferWriter, public BufferModifier {
 
 private:
 
-	// TODO: Add description
-	BC	capacity_;
+    // TODO: Add description
+    BC    capacity_;
 
 
 public:
 
-	// TODO: Add description
-	Buffer();
+    // TODO: Add description
+    Buffer();
 
-	// TODO: Add description
-	Buffer(const BC& capacity);
-
-
-	// TODO: Add description
-	inline BC getCapacity() const {
-
-		return capacity_;
-	}
-
-	// TODO: Add description
-	BC getRemainingCapacity() const;
+    // TODO: Add description
+    Buffer(const BC& capacity);
 
 
-	// TODO: Add description
-	virtual ~Buffer();
+    // TODO: Add description
+    inline BC getCapacity() const {
+
+        return capacity_;
+    }
+
+    // TODO: Add description
+    BC getRemainingCapacity() const;
+
+
+    // TODO: Add description
+    virtual ~Buffer();
 
 };
 

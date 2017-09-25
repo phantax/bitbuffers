@@ -17,41 +17,41 @@ class RingBuffer : public StreamReader, public BufferWriter {
 
 private:
 
-	// TODO: Add description
-	BC capacity_;
+    // TODO: Add description
+    BC capacity_;
 
 
 protected:
 
-	/* === To be implemented by sub-classes: =============================== */
+    /* === To be implemented by sub-classes: =============================== */
 
-	// TODO: Add description
-	virtual void clear_() = 0;
+    // TODO: Add description
+    virtual void clear_() = 0;
 
-	/* ===================================================================== */
+    /* ===================================================================== */
 
 
 public:
 
-	// TODO: Add description
-	RingBuffer();
+    // TODO: Add description
+    RingBuffer();
 
-	// TODO: Add description
-	RingBuffer(const BC& capacity);
-
-
-	// TODO: Add description
-	void clear();
-
-	// TODO: Add description
-	BC getCapacity() const;
-
-	// TODO: Add description
-	BC getRemainingCapacity() const;
+    // TODO: Add description
+    RingBuffer(const BC& capacity);
 
 
-	// TODO: Add description
-	virtual ~RingBuffer();
+    // TODO: Add description
+    void clear();
+
+    // TODO: Add description
+    BC getCapacity() const;
+
+    // TODO: Add description
+    BC getRemainingCapacity() const;
+
+
+    // TODO: Add description
+    virtual ~RingBuffer();
 
 };
 

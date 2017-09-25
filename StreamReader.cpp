@@ -13,11 +13,11 @@ StreamReader::StreamReader() : accu_(0) {
  */
 uint8_t StreamReader::readByte(bool remove) {
 
-	uint8_t byte = this->readByte_(remove);
-	if (remove) {
-		++accu_;
-	}
-	return byte;
+    uint8_t byte = this->readByte_(remove);
+    if (remove) {
+        ++accu_;
+    }
+    return byte;
 }
 
 
@@ -26,11 +26,11 @@ uint8_t StreamReader::readByte(bool remove) {
  */
 bool StreamReader::readBit(bool remove) {
 
-	bool bit = this->readBit_(remove);
-	if (remove) {
-		accu_ <<= 1;
-	}
-	return bit;
+    bool bit = this->readBit_(remove);
+    if (remove) {
+        accu_ <<= 1;
+    }
+    return bit;
 }
 
 
@@ -39,23 +39,23 @@ bool StreamReader::readBit(bool remove) {
  */
 BC StreamReader::flush(const BC& max) {
 
-	BC len = BC::getMin(this->getLength(), max);
-	BC ret = len;
+    BC len = BC::getMin(this->getLength(), max);
+    BC ret = len;
 
-	if (len.isDef()) {
-		while (len >= 1) {
-			this->readByte();
-			len--;
-		}
-		while (len > 0) {
-			this->readBit();
-			len >>= 1;
-		}
-	} else {
-		ret = 0;
-	}
+    if (len.isDef()) {
+        while (len >= 1) {
+            this->readByte();
+            len--;
+        }
+        while (len > 0) {
+            this->readBit();
+            len >>= 1;
+        }
+    } else {
+        ret = 0;
+    }
 
-	return ret;
+    return ret;
 }
 
 

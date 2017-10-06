@@ -1,3 +1,2 @@
 # bitbuffers
-An implementation of arbitrary bit-length buffers and streamers in C++
-
+The repository moved to https://github.com/phantax/bitbuffers-cpp ...
